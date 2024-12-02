@@ -31,6 +31,16 @@ namespace Rotas.API.Services
             return await _repository.GetAllAsync();
         }
 
+        public async Task<Rota> ObterPorIdAsync(int id)
+        {
+            var rota = await _repository.GetByIdAsync(id);
+
+            if (rota == null)
+                throw new Exception($"Nenhuma rota encontrada com o id {id}.");
+
+            return rota;
+        }
+
         public async Task<Rota> AdicionarAsync(RotaModel rotaModel)
         {
             var rota = new Rota

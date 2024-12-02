@@ -7,6 +7,7 @@ namespace Rotas.API.Services.Interfaces
     {
         Task<string> ObterMelhorRotaAsync(string origem, string destino);
         Task<IEnumerable<Rota>> ObterTodasAsync();
+        Task<Rota> ObterPorIdAsync(int id);
         Task<Rota> AdicionarAsync(RotaModel rotaModel);
         Task AtualizarAsync(int id, RotaModel rotaModel);
         Task RemoverAsync(int id);

@@ -37,9 +37,34 @@ namespace Rotas.API.Controllers
         [HttpGet]
         public async Task<IActionResult> ObterTodasRotas()
         {
-            var rotas = await _rotaService.ObterTodasAsync();
+            try
+            {
+                var rotas = await _rotaService.ObterTodasAsync();
 
-            return Ok(rotas);
+                return Ok(rotas);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, ex.Message);
+                return BadRequest(new { Error = ex.Message });
+            }
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> ObterPorId(int id)
+        {
+            try
+            {
+                var rotas = await _rotaService.ObterPorIdAsync(id);
+
+                return Ok(rotas);
+            }
+
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, ex.Message);
+                return BadRequest(new { Error = ex.Message });
+            }
         }
 
         [HttpPost]
