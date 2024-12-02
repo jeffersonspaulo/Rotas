@@ -7,7 +7,7 @@
 - Clean Architecture
 
 ### Componentes:
-- Entity Framework Core com Migrations: facilitar a persistência e controle de versões do banco de dados
+- Entity Framework Core com Migrations: facilita a persistência e controle de versões do banco de dados
 - xUnit: realização dos testes unitários
 - Algoritmo de Cálculo da Melhor Rota: Utilização de grafo e o algoritmo de Dijkstra para calcular a rota mais barata entre a origem e o destino, considerando os custos das rotas.
 
